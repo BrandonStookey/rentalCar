@@ -1,4 +1,5 @@
 var routerApp = angular.module('project', [
+    'project.services',
     'project.homeView',
     'project.secondView',
     'ui.router'
