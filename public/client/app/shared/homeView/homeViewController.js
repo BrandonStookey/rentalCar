@@ -11,41 +11,52 @@ angular.module('project.homeView', [])
 		//======================================User Selects Pick Up Time
 		var pickUpTimeMinutes = pickUpTime.getMinutes();
 		var pickUpTimeHour = pickUpTime.getHours();
+		var pickUpTimeResult;
 
 		pickUpTimeHour = pickUpTimeHour < 10 ? '0'+ pickUpTimeHour : pickUpTimeHour;
+		
 		pickUpTimeMinutes = pickUpTimeMinutes < 10 ? '0'+ pickUpTimeMinutes : pickUpTimeMinutes;
 		
-		console.log('pickUpTime: ', pickUpTimeHour + ":" + pickUpTimeMinutes);
+		pickUpTimeResult = pickUpTimeHour + ":" + pickUpTimeMinutes;
+		console.log('pickUpTimeResult: ', pickUpTimeResult);
 
 		//=======================================User Selects Pick Up date
 
 		var startDateMonth = startDate.getMonth() + 1 
 		var startDateDay = startDate.getDate()
+		var startDateResult; 
 
 		startDateMonth = startDateMonth < 10 ? '0'+ startDateMonth : startDateMonth;
+		
 		startDateDay = startDateDay < 10 ? '0'+ startDateDay : startDateDay;
 
-		console.log('pickUpDate: ', startDateMonth + "/" + startDateDay + "/" + startDate.getFullYear());
+		startDateResult = startDateMonth + "/" + startDateDay + "/" + startDate.getFullYear();
+
+		console.log('startDateResult: ', startDateResult);
 
 		//=====================================User Selects Drop Off Time
 		var dropOffTimeMinutes = dropOffTime.getMinutes();
 		var dropOffTimeHour = dropOffTime.getHours();
+		var dropOffTimeResult;
 
 		dropOffTimeHour = dropOffTimeHour < 10 ? '0'+ dropOffTimeHour : dropOffTimeHour;
 		dropOffTimeMinutes = dropOffTimeMinutes < 10 ? '0'+ dropOffTimeMinutes : dropOffTimeMinutes;
+
+		dropOffTimeResult = dropOffTimeHour + ":" + dropOffTimeMinutes
 		
-		console.log('dropOffTime: ',	dropOffTimeHour + ":" + dropOffTimeMinutes);
+		console.log('dropOffTimeResult: ',	dropOffTimeResult);
 
 		//=======================================User Selects Drop Off Date
 
 		var endDateMonth = endDate.getMonth() + 1 
 		var endDateDay = endDate.getDate()
+		var endDateResult;
 
 		endDateMonth = endDateMonth < 10 ? '0'+ endDateMonth : endDateMonth;
 		endDateDay = endDateDay < 10 ? '0'+ endDateDay : endDateDay;
 
-		console.log('endDate: ', endDateMonth + "/" + endDateDay + "/" + endDate.getFullYear());
+		endDateResult = endDateMonth + "/" + endDateDay + "/" + endDate.getFullYear();
 
-
+		console.log('endDate: ', endDateResult);
 	}
 }]);
