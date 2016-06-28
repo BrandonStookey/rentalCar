@@ -1,1 +1,50 @@
 <h1> Hey I am homeView! </h1>
+<form>
+	<input type = "text" class = "searchBox" ng-model="dest" placeholder= "Select Destination" novalidate required></input>
+
+	<input type="date"
+       ng-model="startDate"
+       [name="string"]
+       [min="string"]
+       [max="string"]
+       [ng-min=""]
+       [ng-max=""]
+       [required="string"]
+       [ng-required="string"]
+       [ng-change="string"]></input>
+
+  	<input type="time"
+       ng-model="pickUpTime"
+       [name="string"]
+       [min="string"]
+       [max="string"]
+       [ng-min=""]
+       [ng-max=""]
+       [required="string"]
+       [ng-required="string"]
+       [ng-change="string"]>     
+
+	<input type="date"
+	       ng-model="endDate"
+	       [name="string"]
+	       [min="string"]
+	       [max="string"]
+	       [ng-min=""]
+	       [ng-max=""]
+	       [required="string"]
+	       [ng-required="string"]
+	       [ng-change="string"]></input>       
+
+  <input type="time"
+       ng-model="dropOffTime"
+       [name="string"]
+       [min="string"]
+       [max="string"]
+       [ng-min=""]
+       [ng-max=""]
+       [required="string"]
+       [ng-required="string"]
+       [ng-change="string"]>     
+</form>
+
+<button ng-click ="catchDetails(dest, startDate, endDate, pickUpTime, dropOffTime)" class ="searchSubmit" ng-disabled="myForm.$invalid">Search</button>
