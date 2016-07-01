@@ -22,7 +22,7 @@ angular.module('project.services', [])
 		
 		return $http({
 			method: 'GET',
-			url: 'http://api.hotwire.com/v1/search/car?apikey=qqvyj5fw2sbye5upjv7pu6c8&dest=' + destResult +'&startdate='+ startDateResult + '&enddate='+ endDateResult +'&pickuptime='+ pickUpTimeResult + '&dropofftime='+ dropOffTimeResult,
+			url: 'https://api.hotwire.com/v1/search/car?apikey=qqvyj5fw2sbye5upjv7pu6c8&dest=' + destResult +'&startdate='+ startDateResult + '&enddate='+ endDateResult +'&pickuptime='+ pickUpTimeResult + '&dropofftime='+ dropOffTimeResult,
       transformResponse:function(data) {
       	// http://rabidgadfly.com/2013/02/angular-and-xml-no-problem/
 			  // convert the data to JSON and provide
