@@ -1,50 +1,62 @@
-<h1> Stookey's Car Rental </h1>
-<form>
-	<input type = "text" class = "searchBox" ng-model="dest" placeholder= "Select Destination" novalidate required></input>
+<div class = 'container'>
+  <div class = 'row'>
+    <div class="col-sm-10 col-sm-offset-1">
+    
+    <div class = 'row'>
+      <div class = 'col-sm-4 col-sm-offset-4'>
+        <img src = 'http://www.clipartbest.com/cliparts/9cz/jzE/9czjzERcE.jpeg' style="height:200px;width:200px;border-radius: 25px">
+      </div>
+    </div>
+    
+    <form>
+    	<input type = "text" class = "searchBox" ng-model="dest" placeholder= "Enter City" novalidate required></input>
 
-	<input type="date"
-       ng-model="startDate"
-       [name="string"]
-       [min="string"]
-       [max="string"]
-       [ng-min=""]
-       [ng-max=""]
-       [required="string"]
-       [ng-required="string"]
-       [ng-change="string"]></input>
+    	<input type="date"
+           ng-model="startDate"
+           [name="string"]
+           [min="string"]
+           [max="string"]
+           [ng-min=""]
+           [ng-max=""]
+           [required="string"]
+           [ng-required="string"]
+           [ng-change="string"]></input>
 
-  	<input type="time"
-       ng-model="pickUpTime"
-       [name="string"]
-       [min="string"]
-       [max="string"]
-       [ng-min=""]
-       [ng-max=""]
-       [required="string"]
-       [ng-required="string"]
-       [ng-change="string"]>     
+      	<input type="time"
+           ng-model="pickUpTime"
+           [name="string"]
+           [min="string"]
+           [max="string"]
+           [ng-min=""]
+           [ng-max=""]
+           [required="string"]
+           [ng-required="string"]
+           [ng-change="string"]>     
 
-	<input type="date"
-	       ng-model="endDate"
-	       [name="string"]
-	       [min="string"]
-	       [max="string"]
-	       [ng-min=""]
-	       [ng-max=""]
-	       [required="string"]
-	       [ng-required="string"]
-	       [ng-change="string"]></input>       
+    	<input type="date"
+    	       ng-model="endDate"
+    	       [name="string"]
+    	       [min="string"]
+    	       [max="string"]
+    	       [ng-min=""]
+    	       [ng-max=""]
+    	       [required="string"]
+    	       [ng-required="string"]
+    	       [ng-change="string"]></input>       
 
-  <input type="time"
-       ng-model="dropOffTime"
-       [name="string"]
-       [min="string"]
-       [max="string"]
-       [ng-min=""]
-       [ng-max=""]
-       [required="string"]
-       [ng-required="string"]
-       [ng-change="string"]>     
-</form>
+      <input type="time"
+           ng-model="dropOffTime"
+           [name="string"]
+           [min="string"]
+           [max="string"]
+           [ng-min=""]
+           [ng-max=""]
+           [required="string"]
+           [ng-required="string"]
+           [ng-change="string"]>     
+    <a href = '#/secondView'><button ng-click ="catchDetails(dest, startDate, endDate, pickUpTime, dropOffTime)" class ="searchSubmit" ng-disabled="myForm.$invalid">Search</button></a>
+    </form>
 
-<a href = '#/secondView'><button ng-click ="catchDetails(dest, startDate, endDate, pickUpTime, dropOffTime)" class ="searchSubmit" ng-disabled="myForm.$invalid">Search</button></a>
+    </div>
+  </div>
+</div>
