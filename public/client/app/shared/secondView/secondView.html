@@ -3,8 +3,7 @@
 		<div class = 'col-sm-8 col-sm-offset-2'>
 			<div class = 'carSearchBoxResult'>
 
-				<img class = 'carImage' ng-src="https://ak-secure.hotwirestatic.com/2016.17/static/images/car/cartypes/289x137/US/econ.png" alt="description" src="https://ak-secure.hotwirestatic.com/2016.17/static/images/car/cartypes/289x137/US/econ.png">
-
+				<img class = 'carImage' ng-src="../assets/img/{{ car.CarTypeCode }}.png">
 
 				<ul class = 'carResultInfo'>
 					<ul> {{ car.CarTypeCode }}</ul>
@@ -19,6 +18,7 @@
 							<ul> Daily Rate </ul>
 							<ul> ${{ car.DailyRate }} </ul>
 						</ul>
+
 						<div class = 'row'>
 							<div class = 'col-sm-offset-5'>
 								<a href = '{{car.DeepLink}}'><button class = 'continueButton'> Continue </button></a>
