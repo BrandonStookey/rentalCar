@@ -1,1 +1,11 @@
 <h1> Hi I am Second View! </h1>
+
+<div ng-repeat = 'car in carSearchResult'> 
+	<div >
+		<!-- <img ng-src="https://ak-secure.hotwirestatic.com/2016.17/static/images/car/cartypes/289x137/US/{{ car.CarTypeCode }}.png" alt="description" src="https://ak-secure.hotwirestatic.com/2016.17/static/images/car/cartypes/289x137/US/econ.png"> -->
+		
+		<img ng-src="https://ak-secure.hotwirestatic.com/2016.17/static/images/car/cartypes/289x137/US/econ.png" alt="description" src="https://ak-secure.hotwirestatic.com/2016.17/static/images/car/cartypes/289x137/US/econ.png">
+
+		{{ car.CarTypeCode }}
+	</div>
+</div>

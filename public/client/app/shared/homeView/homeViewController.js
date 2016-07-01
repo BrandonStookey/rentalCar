@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('project.homeView', [])
+angular.module('project.homeView', ['ui.bootstrap'])
 
 .controller('homeViewController', ['$scope','projectFactory', function($scope, projectFactory){
 	console.log('I am homeViewController!');
@@ -16,6 +16,7 @@ angular.module('project.homeView', [])
 		var dropOffTimeResult;
 		var endDateResult;	
 		var destination;
+		
 		// pickUpTimeHour = pickUpTimeHour < 10 ? '0'+ pickUpTimeHour : pickUpTimeHour;
 		
 		pickUpTimeMinutes = pickUpTimeMinutes < 10 ? '0'+ pickUpTimeMinutes : pickUpTimeMinutes;

@@ -7,7 +7,7 @@ var routerApp = angular.module('project', [
 
 routerApp.config(function($stateProvider, $urlRouterProvider) {
     
-    $urlRouterProvider.otherwise('/index.html');
+    $urlRouterProvider.otherwise('/homeView');
     
     $stateProvider
         
