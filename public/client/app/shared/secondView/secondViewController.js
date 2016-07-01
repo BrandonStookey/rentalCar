@@ -6,10 +6,11 @@ angular.module('project.secondView', ['ui.bootstrap'])
 	console.log('I am secondViewController!')
 	$scope.carSearchResult;
 
+
 	projectFactory.getCar().then(function(data){ 
 			console.log('secondView data:', data);
 			$scope.carSearchResult = data;
-			console.log('$scope.carSearchResult: ', $scope.carSearchResult[0]);
+			console.log('$scope.carSearchResult: ', $scope.carSearchResult);
 		});
 
 }]);

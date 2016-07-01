@@ -46,6 +46,6 @@ angular.module('project.services', [])
 
 	return{
 		getCar: getCar,
-		setCarSearchResult: setCarSearchResult
+		setCarSearchResult: setCarSearchResult,
 	}
 }]);

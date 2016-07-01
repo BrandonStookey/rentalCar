@@ -1,9 +1,33 @@
-<div ng-repeat = 'car in carSearchResult'> 
-	<div >
-		<!-- <img ng-src="https://ak-secure.hotwirestatic.com/2016.17/static/images/car/cartypes/289x137/US/{{ car.CarTypeCode }}.png" alt="description" src="https://ak-secure.hotwirestatic.com/2016.17/static/images/car/cartypes/289x137/US/econ.png"> -->
-		
-		<img ng-src="https://ak-secure.hotwirestatic.com/2016.17/static/images/car/cartypes/289x137/US/econ.png" alt="description" src="https://ak-secure.hotwirestatic.com/2016.17/static/images/car/cartypes/289x137/US/econ.png">
+<div class = 'container' ng-repeat = 'car in carSearchResult'> 
+	<div class = 'row'>
+		<div class = 'col-sm-8 col-sm-offset-2'>
+			<div class = 'carSearchBoxResult'>
 
-		{{ car.CarTypeCode }}
+				<img class = 'carImage' ng-src="https://ak-secure.hotwirestatic.com/2016.17/static/images/car/cartypes/289x137/US/econ.png" alt="description" src="https://ak-secure.hotwirestatic.com/2016.17/static/images/car/cartypes/289x137/US/econ.png">
+
+
+				<ul class = 'carResultInfo'>
+					<ul> {{ car.CarTypeCode }}</ul>
+					<ul> Mileage </ul>
+					<ul> ${{ car.MileageDescription }} </ul>
+				</ul>
+
+				<div class ='row'>
+					<div class = 'col-sm-offset-8'>
+						
+						<ul>
+							<ul> Daily Rate </ul>
+							<ul> ${{ car.DailyRate }} </ul>
+						</ul>
+						<div class = 'row'>
+							<div class = 'col-sm-offset-5'>
+								<a href = '{{car.DeepLink}}'><button class = 'continueButton'> Continue </button></a>
+							</div>
+						</div>	
+					</div>
+				</div>		
+
+			</div>
+		</div>
 	</div>
 </div>
