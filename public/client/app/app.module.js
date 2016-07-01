@@ -15,14 +15,18 @@ angular.module('project.services', [])
 			dropOffTimeResult = dropOffTime; 
 	}
 	
+// url: '/followers/' + userEmail + '/' + setUserEmail,
+
 	var getCar = function(){
 		console.log('Inside of getCar dude!');
 
 		console.log('http://api.hotwire.com/v1/search/car?apikey=qqvyj5fw2sbye5upjv7pu6c8&dest=' + destResult +'&startdate='+ startDateResult + '&enddate='+ endDateResult +'&pickuptime='+ pickUpTimeResult + '&dropofftime='+ dropOffTimeResult)
 		
+		// '/getCar/' + destResult + '/' + startDateResult + '/' + endDateResult + '/' + pickUpTimeResult + '/' + dropOffTimeResult
+
 		return $http({
 			method: 'GET',
-			url: 'https://api.hotwire.com/v1/search/car?apikey=qqvyj5fw2sbye5upjv7pu6c8&dest=' + destResult +'&startdate='+ startDateResult + '&enddate='+ endDateResult +'&pickuptime='+ pickUpTimeResult + '&dropofftime='+ dropOffTimeResult,
+			url: '/getCar/' + destResult + '/' + startDateResult + '/' + endDateResult + '/' + pickUpTimeResult + '/' + dropOffTimeResult,
       transformResponse:function(data) {
       	// http://rabidgadfly.com/2013/02/angular-and-xml-no-problem/
 			  // convert the data to JSON and provide
@@ -44,8 +48,21 @@ angular.module('project.services', [])
     });
 	}
 
+  // var test = function(){
+  //   return $http({
+  //     method: 'GET',
+  //     url: '/',
+  //   })
+  //  .then(function(result) {
+  //     return result;
+  //   }, function(err) {
+  //     console.error('Post GET error:', err);
+  //   });
+  // }	
+
 	return{
 		getCar: getCar,
 		setCarSearchResult: setCarSearchResult,
+		// test: test
 	}
 }]);

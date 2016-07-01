@@ -16,6 +16,10 @@ angular.module('project.homeView', ['ui.bootstrap'])
 		var dropOffTimeResult;
 		var endDateResult;	
 		var destination;
+
+		// projectFatctory.test().then(function(result){
+		// 	console.log('result');
+		// });
 		
 		// pickUpTimeHour = pickUpTimeHour < 10 ? '0'+ pickUpTimeHour : pickUpTimeHour;
 		

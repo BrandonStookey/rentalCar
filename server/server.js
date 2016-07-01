@@ -11,6 +11,8 @@ app.use(morgan('tiny'));
 app.use(bodyParser.json());
 app.use(cors());
 
+var routes = require('./routes');
+
 app.use(express.static(__dirname + './../public/client'));
 
 var port = process.env.PORT || 8080;
