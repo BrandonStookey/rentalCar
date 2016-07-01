@@ -5,25 +5,23 @@ angular.module('project.homeView', [])
 .controller('homeViewController', ['$scope','projectFactory', function($scope, projectFactory){
 	console.log('I am homeViewController!');
 	
-	$scope.pickUpTimeResult;
-	$scope.startDateResult;
-	$scope.dropOffTimeResult;
-	$scope.endDateResult;	
-	$scope.destination;
-
 	$scope.catchDetails = function(dest, startDate, endDate, pickUpTime, dropOffTime){
 
 		//======================================User Selects Pick Up Time
 		var pickUpTimeMinutes = pickUpTime.getMinutes();
 		var pickUpTimeHour = pickUpTime.getHours();
-		$scope.destination = dest;
-
+		var destination = dest;
+		var pickUpTimeResult;
+		var startDateResult;
+		var dropOffTimeResult;
+		var endDateResult;	
+		var destination;
 		// pickUpTimeHour = pickUpTimeHour < 10 ? '0'+ pickUpTimeHour : pickUpTimeHour;
 		
 		pickUpTimeMinutes = pickUpTimeMinutes < 10 ? '0'+ pickUpTimeMinutes : pickUpTimeMinutes;
 		
-		$scope.pickUpTimeResult = pickUpTimeHour + ":" + pickUpTimeMinutes;
-		console.log('pickUpTimeResult: ', $scope.pickUpTimeResult);
+		pickUpTimeResult = pickUpTimeHour + ":" + pickUpTimeMinutes;
+		console.log('pickUpTimeResult: ', pickUpTimeResult);
 
 		//=======================================User Selects Pick Up date
 
@@ -34,9 +32,9 @@ angular.module('project.homeView', [])
 		
 		startDateDay = startDateDay < 10 ? '0'+ startDateDay : startDateDay;
 
-		$scope.startDateResult = startDateMonth + "/" + startDateDay + "/" + startDate.getFullYear();
+		startDateResult = startDateMonth + "/" + startDateDay + "/" + startDate.getFullYear();
 
-		console.log('startDateResult: ', $scope.startDateResult);
+		console.log('startDateResult: ', startDateResult);
 
 		//=====================================User Selects Drop Off Time
 		var dropOffTimeMinutes = dropOffTime.getMinutes();
@@ -45,9 +43,9 @@ angular.module('project.homeView', [])
 		// dropOffTimeHour = dropOffTimeHour < 10 ? '0'+ dropOffTimeHour : dropOffTimeHour;
 		dropOffTimeMinutes = dropOffTimeMinutes < 10 ? '0'+ dropOffTimeMinutes : dropOffTimeMinutes;
 
-		$scope.dropOffTimeResult = dropOffTimeHour + ":" + dropOffTimeMinutes;
+		dropOffTimeResult = dropOffTimeHour + ":" + dropOffTimeMinutes;
 		
-		console.log('dropOffTimeResult: ',	$scope.dropOffTimeResult);
+		console.log('dropOffTimeResult: ',	dropOffTimeResult);
 
 		//=======================================User Selects Drop Off Date
 
@@ -57,11 +55,13 @@ angular.module('project.homeView', [])
 		endDateMonth = endDateMonth < 10 ? '0'+ endDateMonth : endDateMonth;
 		endDateDay = endDateDay < 10 ? '0'+ endDateDay : endDateDay;
 
-		$scope.endDateResult = endDateMonth + "/" + endDateDay + "/" + endDate.getFullYear();
+		endDateResult = endDateMonth + "/" + endDateDay + "/" + endDate.getFullYear();
 
-		console.log('endDate: ', $scope.endDateResult);
+		console.log('endDate: ', endDateResult);
 
-		projectFactory.getCar($scope.destination, $scope.pickUpTimeResult, $scope.startDateResult, $scope.endDateResult, $scope.dropOffTimeResult).then(function(data){ console.log(data)});
+		// projectFactory.getCar($scope.destination, $scope.pickUpTimeResult, $scope.startDateResult, $scope.endDateResult, $scope.dropOffTimeResult).then(function(data){ console.log('data:', data)});
+
+		projectFactory.setCarSearchResult(destination, pickUpTimeResult, startDateResult, endDateResult, dropOffTimeResult);
 		}
 }]);
 
