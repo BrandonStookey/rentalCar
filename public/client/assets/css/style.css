@@ -38,3 +38,23 @@ img{
 .carResultInfo{
 	float: left;
 }
+
+.enterCityBox{
+	margin-bottom: 5px;
+	width:780px;
+	border-radius: 5px;
+}
+
+/*Style for date picker*/
+
+.full button span {
+  background-color: limegreen;
+  border-radius: 32px;
+  color: black;
+}
+
+.partially button span {
+  background-color: orange;
+  border-radius: 32px;
+  color: black;
+}

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('project.secondView', ['ui.bootstrap'])
+angular.module('project.secondView', ['ui.bootstrap','angular-loading-bar', 'ngAnimate'])
 
 .controller('secondViewController', ['$scope','projectFactory', function($scope, projectFactory){
 	console.log('I am secondViewController!')
