@@ -1,29 +1,27 @@
 <div class = 'container' ng-repeat = 'car in carSearchResult'> 
 	<div class = 'row'>
-		<div class = 'col-sm-8 col-sm-offset-2'>
+		<div class = 'col-sm-10'>
 			<div class = 'carSearchBoxResult'>
 
 				<img class = 'carImage' ng-src="../assets/img/{{ car.CarTypeCode }}.png">
 
 				<ul class = 'carResultInfo'>
-					<ul> {{ car.CarTypeCode }}</ul>
-					<ul> Mileage </ul>
-					<ul> ${{ car.MileageDescription }} </ul>
+					<ul class = 'carInfo'> Car Type </ul>
+					<ul class = 'carInfoResult'> {{ car.CarTypeCode }}</ul>
+					<ul class = 'carInfo'> Mileage </ul>
+					<ul class = 'carInfoResult'> ${{ car.MileageDescription }} </ul>
 				</ul>
 
 				<div class ='row'>
 					<div class = 'col-sm-offset-8'>
 						
 						<ul>
-							<ul> Daily Rate </ul>
-							<ul> ${{ car.DailyRate }} </ul>
+							<ul class = 'carInfo'> Daily Rate </ul>
+							<ul class = 'carInfoResult'> ${{ car.DailyRate }} </ul>
+							<a href = '{{car.DeepLink}}'><button type="button" id = 'continueButton' class="btn btn-primary"> Continue </button></a>
 						</ul>
 
-						<div class = 'row'>
-							<div class = 'col-sm-offset-5'>
-								<a href = '{{car.DeepLink}}'><button class = 'continueButton'> Continue </button></a>
-							</div>
-						</div>	
+						
 					</div>
 				</div>		
 
