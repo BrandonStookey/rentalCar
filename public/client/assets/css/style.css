@@ -1,38 +1,61 @@
-body{
-	padding-top: 40px;
-	background: #26B1FC;
-}
-
 @media (min-width: 1200px) {
   .container {
     width: 970px;
   }
 }
 
-img{
-	padding: 15px;
+.header{
+	/*border: 1px solid #000000;*/
+	background-color: #0075F4;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+}
+
+.logo{
+	height:75px;
+	width:75px;
+	border-radius: 25px;
+	float:left;
+	margin-right: 5px;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+.mainName{
+	text-align: left;
+	margin-left: 15px;
+	margin-bottom: 25px;
+}
+
+.searchCar{
+  border: 1px solid #000000;
+  margin-top: 40px;
+  padding: 5px;
+  margin-bottom: 10px;
+  background: #26B1FC;
+  border-radius: 25px;
 }
 
 .carImage{
 	height:100px;
 	width:150px;
-	/*border-radius: 10px;*/
-	/*margin-right: 5px;*/
 	float: left;
 }
 
-.mainName{
-	text-align: center;
-}
-
-.searchSubmit{
-	align: center;
+#searchSubmit{
+	margin-top: 30px;
+	float: right;
 }
 
 .carSearchBoxResult {
     border: 1px solid #000000;
-    padding: 5px;
+    /*padding: 5px;*/
     margin-bottom: 10px;
+    border-radius: 10px;
+    background: #26B1FC;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .carResultInfo{
@@ -40,9 +63,20 @@ img{
 }
 
 .enterCityBox{
-	margin-bottom: 5px;
-	width:780px;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	height: 40px;
+	width:770px;
 	border-radius: 5px;
+}
+
+.pickUpTimeBox{
+	float: left;
+	margin-right: 250px;
+}
+
+.dropOffTimeBox{
+	float: left;
 }
 
 /*Style for date picker*/

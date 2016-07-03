@@ -1,66 +1,44 @@
 <div class = 'container'>
-  <div class = 'row'>
-    <div class="col-sm-10 col-sm-offset-1">
-    
+  <div class = 'searchCar'>
     <div class = 'row'>
-      <div class = 'col-sm-4 col-sm-offset-4'>
-        <img src = 'http://www.clipartbest.com/cliparts/9cz/jzE/9czjzERcE.jpeg' style="height:200px;width:200px;border-radius: 25px">
+      <div class="col-sm-10 col-sm-offset-1">
+      
+      <form>
+      	<input type = "text" class = "enterCityBox" ng-model="dest" placeholder= "Enter City" novalidate required></input>
+        <!-- startDate Calendar Selector -->
+          <div>
+              <div class="row">
+                <div class="col-md-6">
+                  <p class="input-group">
+                    <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="startDate" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" placeholder = 'Pick Up'/>
+                    <span class="input-group-btn">
+                      <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                  </p>
+                </div>
+
+                <!-- endDate Calendar Selector -->
+                <div class="col-md-6">
+                  <p class="input-group">
+                    <input type="text" class="form-control" uib-datepicker-popup ng-model="endDate" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" placeholder = 'Drop Off'/>
+                    <span class="input-group-btn">
+                      <button type="button" class="btn btn-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                  </p>
+                </div>
+              </div>
+          </div>
+
+        <!-- pickUpTime -->
+        <uib-timepicker class = 'pickUpTimeBox' ng-model="pickUpTime" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
+
+        <!-- dropOffTime -->
+        <uib-timepicker class = 'dropOffTimeBox' ng-model="dropOffTime" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
+    
+        <a href = '#/secondView'><button type="button" id = 'searchSubmit' class="btn btn-primary btn-lg active" ng-click ="catchDetails(dest, startDate, endDate, pickUpTime, dropOffTime)" class ="searchSubmit" ng-disabled="myForm.$invalid">Search</button></a>
+      </form>
+
       </div>
-    </div>
-    
-    <form>
-    	<input type = "text" class = "enterCityBox" ng-model="dest" placeholder= "Enter City" novalidate required></input>
-      <!-- startDate Calendar Selector -->
-        <div>
-            <div class="row">
-              <div class="col-md-6">
-                <p class="input-group">
-                  <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="startDate" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" placeholder = 'Pick Up'/>
-                  <span class="input-group-btn">
-                    <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
-                  </span>
-                </p>
-              </div>
-
-              <!-- endDate Calendar Selector -->
-              <div class="col-md-6">
-                <p class="input-group">
-                  <input type="text" class="form-control" uib-datepicker-popup ng-model="endDate" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" placeholder = 'Drop Off'/>
-                  <span class="input-group-btn">
-                    <button type="button" class="btn btn-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
-                  </span>
-                </p>
-              </div>
-            </div>
-        </div>
-
-
-      	<input type="time"
-           ng-model="pickUpTime"
-           [name="string"]
-           [min="string"]
-           [max="string"]
-           [ng-min=""]
-           [ng-max=""]
-           [required="string"]
-           [ng-required="string"]
-           [ng-change="string"]>     
-    
-
-      <input type="time"
-           ng-model="dropOffTime"
-           [name="string"]
-           [min="string"]
-           [max="string"]
-           [ng-min=""]
-           [ng-max=""]
-           [required="string"]
-           [ng-required="string"]
-           [ng-change="string"]>     
-
-    <a href = '#/secondView'><button ng-click ="catchDetails(dest, startDate, endDate, pickUpTime, dropOffTime)" class ="searchSubmit" ng-disabled="myForm.$invalid">Search</button></a>
-    </form>
-
     </div>
   </div>
 </div>
