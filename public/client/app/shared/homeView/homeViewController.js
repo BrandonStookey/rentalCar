@@ -21,125 +21,116 @@ angular.module('project.homeView', ['ui.bootstrap','angular-loading-bar', 'ngAni
   };
 
   $scope.init = function(){
-		 $scope.updatePickUpTime = function() {
+
+		 	$scope.updatePickUpTime = function() {
 		    var d = new Date();
 		    d.setHours( 14 );
 		    d.setMinutes( 0 );
 		    $scope.pickUpTime = d;
 		  };
 
-		 $scope.updateDropOffTime = function() {
+		 	$scope.updateDropOffTime = function() {
 		    var d = new Date();
 		    d.setHours( 14 );
 		    d.setMinutes( 0 );
 		    $scope.dropOffTime = d;
 		  };
 
-		 	$scope.updatePickUpTime();
-		 	$scope.updateDropOffTime();
-	}
-	$scope.init();
-
 //============================Date Selector
 
-	$scope.today = function() {
-	    $scope.dt = new Date();
+		$scope.today = function() {
+		    $scope.startDate = new Date();
+		    $scope.endDate = new Date();
+		  };
+		$scope.today();
+
+	  $scope.inlineOptions = {
+	    customClass: getDayClass,
+	    minDate: new Date(),
+	    showWeeks: true
 	  };
-	  $scope.today();
 
-  $scope.clear = function() {
-    $scope.dt = null;
-  };
+	  $scope.dateOptions = {
+	    formatYear: 'yy',
+	    maxDate: new Date(2020, 5, 22),
+	    minDate: new Date(),
+	    startingDay: 1
+	  };
 
-  $scope.inlineOptions = {
-    customClass: getDayClass,
-    minDate: new Date(),
-    showWeeks: true
-  };
+	  $scope.toggleMin = function() {
+	    $scope.inlineOptions.minDate = $scope.inlineOptions.minDate ? null : new Date();
+	    $scope.dateOptions.minDate = $scope.inlineOptions.minDate;
+	  };
 
-  $scope.dateOptions = {
-    // dateDisabled: disabled,
-    formatYear: 'yy',
-    maxDate: new Date(2020, 5, 22),
-    minDate: new Date(),
-    startingDay: 1
-  };
+	  $scope.open1 = function() {
+	    $scope.popup1.opened = true;
+	  };
 
-  // Disable weekend selection
-  // function disabled(data) {
-  //   var date = data.date,
-  //     mode = data.mode;
-  //   return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
-  // }
+	  $scope.open2 = function() {
+	    $scope.popup2.opened = true;
+	  };
 
-  $scope.toggleMin = function() {
-    $scope.inlineOptions.minDate = $scope.inlineOptions.minDate ? null : new Date();
-    $scope.dateOptions.minDate = $scope.inlineOptions.minDate;
-  };
+	  $scope.setDate = function(year, month, day) {
+	    $scope.startDate = new Date(year, month, day);
+	    $scope.endDate = new Date(year, month, day);
+	  };
 
-  $scope.toggleMin();
+	  $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+	  $scope.format = $scope.formats[0];
+	  $scope.altInputFormats = ['M!/d!/yyyy'];
 
-  $scope.open1 = function() {
-    $scope.popup1.opened = true;
-  };
+	  $scope.popup1 = {
+	    opened: false
+	  };
 
-  $scope.open2 = function() {
-    $scope.popup2.opened = true;
-  };
+	  $scope.popup2 = {
+	    opened: false
+	  };
 
-  $scope.setDate = function(year, month, day) {
-    $scope.dt = new Date(year, month, day);
-  };
+	  var tomorrow = new Date();
+	  tomorrow.setDate(tomorrow.getDate() + 1);
+	  var afterTomorrow = new Date();
+	  afterTomorrow.setDate(tomorrow.getDate() + 1);
+	  $scope.events = [
+	    {
+	      date: tomorrow,
+	      status: 'full'
+	    },
+	    {
+	      date: afterTomorrow,
+	      status: 'partially'
+	    }
+	  ];
 
-  $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
-  $scope.format = $scope.formats[0];
-  $scope.altInputFormats = ['M!/d!/yyyy'];
+	  function getDayClass(data) {
+	    var date = data.date,
+	      mode = data.mode;
+	    if (mode === 'day') {
+	      var dayToCheck = new Date(date).setHours(0,0,0,0);
 
-  $scope.popup1 = {
-    opened: false
-  };
+	      for (var i = 0; i < $scope.events.length; i++) {
+	        var currentDay = new Date($scope.events[i].date).setHours(0,0,0,0);
 
-  $scope.popup2 = {
-    opened: false
-  };
+	        if (dayToCheck === currentDay) {
+	          return $scope.events[i].status;
+	        }
+	      }
+	    }
 
-  var tomorrow = new Date();
-  tomorrow.setDate(tomorrow.getDate() + 1);
-  var afterTomorrow = new Date();
-  afterTomorrow.setDate(tomorrow.getDate() + 1);
-  $scope.events = [
-    {
-      date: tomorrow,
-      status: 'full'
-    },
-    {
-      date: afterTomorrow,
-      status: 'partially'
-    }
-  ];
+	    return '';
+	  }	
+	  
+	  //=================toggleMin needs to be invoked twice 
+  	$scope.toggleMin();
+  	$scope.toggleMin();
+	 	$scope.updatePickUpTime();
+	 	$scope.updateDropOffTime();
+	}
 
-  function getDayClass(data) {
-    var date = data.date,
-      mode = data.mode;
-    if (mode === 'day') {
-      var dayToCheck = new Date(date).setHours(0,0,0,0);
-
-      for (var i = 0; i < $scope.events.length; i++) {
-        var currentDay = new Date($scope.events[i].date).setHours(0,0,0,0);
-
-        if (dayToCheck === currentDay) {
-          return $scope.events[i].status;
-        }
-      }
-    }
-
-    return '';
-  }	
+	$scope.init();
 //==============catchDetails, catches users selections and then passes it to projectFactory, then when the view changes, a REST API request is sent with the user's selected information
 	
 	$scope.catchDetails = function(dest, startDate, endDate, pickUpTime, dropOffTime){
-
-		//======================================User Selects Pick Up Time
 		var pickUpTimeMinutes = pickUpTime.getMinutes();
 		var pickUpTimeHour = pickUpTime.getHours();
 		var destination = dest;
@@ -149,13 +140,12 @@ angular.module('project.homeView', ['ui.bootstrap','angular-loading-bar', 'ngAni
 		var endDateResult;	
 		var destination;
 		
+		//======================================User Selects Pick Up Time
 		pickUpTimeMinutes = pickUpTimeMinutes < 10 ? '0'+ pickUpTimeMinutes : pickUpTimeMinutes;
 		
 		pickUpTimeResult = pickUpTimeHour + ":" + pickUpTimeMinutes;
-		console.log('pickUpTimeResult: ', pickUpTimeResult);
 
 		//=======================================User Selects Pick Up date
-
 		var startDateMonth = startDate.getMonth() + 1;
 		var startDateDay = startDate.getDate(); 
 
@@ -174,7 +164,6 @@ angular.module('project.homeView', ['ui.bootstrap','angular-loading-bar', 'ngAni
 		dropOffTimeResult = dropOffTimeHour + ":" + dropOffTimeMinutes;
 	
 		//=======================================User Selects Drop Off Date
-
 		var endDateMonth = endDate.getMonth() + 1 
 		var endDateDay = endDate.getDate()
 

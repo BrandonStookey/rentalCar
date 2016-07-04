@@ -11,7 +11,6 @@ angular.module('project.secondView', ['ui.bootstrap','angular-loading-bar', 'ngA
 			$scope.carSearchResult = data;
 			console.log('$scope.carSearchResult: ', $scope.carSearchResult);
 			if(!$scope.carSearchResult){
-				console.log('Go Home!');
 				$location.path('/homeView');
 			}
 		});

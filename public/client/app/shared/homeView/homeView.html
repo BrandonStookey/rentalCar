@@ -4,14 +4,14 @@
       <div class="col-md-10 col-md-offset-1">
         <form name = 'myForm'>
           <!-- insert city text box -->
-        	<input type = "text" class = "enterCityBox" ng-model="dest" placeholder= "Enter City" novalidate required></input>
+        	<input type = "text" class = "enterCityBox" ng-model="dest" placeholder= "Enter City" uib-tooltip="Enter City" novalidate required></input>
     
           <!-- startDate Calendar Selector -->
             <div>
                 <div class="row">
                   <div class="col-md-6">
                     <p class="input-group">
-                      <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="startDate" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" placeholder = 'Pick Up' novalidate required>
+                      <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="startDate" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" placeholder = 'Pick Up' uib-tooltip="Pick Up Date" novalidate required>
                       <span class="input-group-btn">
                         <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
                       </span>
@@ -21,7 +21,7 @@
                   <!-- endDate Calendar Selector -->
                   <div class="col-md-6">
                     <p class="input-group">
-                      <input type="text" class="form-control" uib-datepicker-popup ng-model="endDate" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" placeholder = 'Drop Off' novalidate required>
+                      <input type="text" class="form-control" uib-datepicker-popup ng-model="endDate" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" placeholder = 'Drop Off' uib-tooltip="Drop Off Date" novalidate required>
                       <span class="input-group-btn">
                         <button type="button" class="btn btn-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
                       </span>
@@ -31,10 +31,10 @@
             </div>
 
           <!-- pickUpTime -->
-          <uib-timepicker class = 'pickUpTimeBox' ng-model="pickUpTime" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian" novalidate required></uib-timepicker>
+          <uib-timepicker class = 'pickUpTimeBox' ng-model="pickUpTime" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian" uib-tooltip="Pick Up Time" novalidate required></uib-timepicker>
 
           <!-- dropOffTime -->
-          <uib-timepicker class = 'dropOffTimeBox' ng-model="dropOffTime" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian" novalidate required></uib-timepicker>
+          <uib-timepicker class = 'dropOffTimeBox' ng-model="dropOffTime" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian" uib-tooltip="Drop Off Time" novalidate required></uib-timepicker>
           
           <!-- search button -->
         </form>
