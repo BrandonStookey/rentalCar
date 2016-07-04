@@ -4,7 +4,9 @@
       <div class="col-md-10 col-md-offset-1">
         <form name = 'myForm'>
           <!-- insert city text box -->
-        	<input type = "text" class = "enterCityBox" ng-model="dest" placeholder= "Enter City" uib-tooltip="Enter City" novalidate required></input>
+          <input class = "enterCityBox" ng-model = "dest" type="text" id="Autocomplete" class="form-control" ng-autocomplete="result1" details="details1" placeholder= "Enter a City" uib-tooltip="Enter a City" options="options1" novalidate required>
+
+        	<!-- <input type = "text" class = "enterCityBox" ng-model="dest" placeholder= "Enter City" uib-tooltip="Enter City" novalidate required></input> -->
     
           <!-- startDate Calendar Selector -->
             <div>

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('project.homeView', ['ui.bootstrap','angular-loading-bar', 'ngAnimate'])
+angular.module('project.homeView', ['ui.bootstrap','angular-loading-bar', 'ngAnimate','ngAutocomplete'])
 
 .controller('homeViewController', ['$scope','projectFactory', function($scope, projectFactory){
 
@@ -120,7 +120,7 @@ angular.module('project.homeView', ['ui.bootstrap','angular-loading-bar', 'ngAni
 	    return '';
 	  }	
 	  
-	  //=================toggleMin needs to be invoked twice 
+	  //=================toggleMin needs to be invoked twice, it keeps users from selecting a date before the current day 
   	$scope.toggleMin();
   	$scope.toggleMin();
 	 	$scope.updatePickUpTime();

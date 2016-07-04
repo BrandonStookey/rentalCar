@@ -15,15 +15,7 @@ angular.module('project.services', [])
 			dropOffTimeResult = dropOffTime; 
 	}
 	
-// url: '/followers/' + userEmail + '/' + setUserEmail,
-
-	var getCar = function(){
-		console.log('Inside of getCar dude!');
-
-		console.log('http://api.hotwire.com/v1/search/car?apikey=qqvyj5fw2sbye5upjv7pu6c8&dest=' + destResult +'&startdate='+ startDateResult + '&enddate='+ endDateResult +'&pickuptime='+ pickUpTimeResult + '&dropofftime='+ dropOffTimeResult)
-		
-		// '/getCar/' + destResult + '/' + startDateResult + '/' + endDateResult + '/' + pickUpTimeResult + '/' + dropOffTimeResult
-
+	var getCar = function(){	
 		return $http({
 			method: 'GET',
 			url: '/getCar/' + destResult + '/' + startDateResult + '/' + endDateResult + '/' + pickUpTimeResult + '/' + dropOffTimeResult,
@@ -36,33 +28,15 @@ angular.module('project.services', [])
 		    return json;
 	   		}
 		}).then(function(result) {
-
-			console.log('results: ', result.data.Hotwire.Result.CarResult);
-			// console.log('results: ', result);
-
+			console.log('getCar result: ', result);
       return result.data.Hotwire.Result.CarResult;
-      // return result;
     }, function(err) {
-    	console.log('HELLO ERROR!');
       console.error('Post GET error:', err);
     });
 	}
 
-  // var test = function(){
-  //   return $http({
-  //     method: 'GET',
-  //     url: '/',
-  //   })
-  //  .then(function(result) {
-  //     return result;
-  //   }, function(err) {
-  //     console.error('Post GET error:', err);
-  //   });
-  // }	
-
 	return{
 		getCar: getCar,
 		setCarSearchResult: setCarSearchResult,
-		// test: test
 	}
 }]);
