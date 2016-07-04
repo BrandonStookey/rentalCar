@@ -2,43 +2,44 @@
   <div class = 'searchCar'>
     <div class = 'row'>
       <div class="col-md-10 col-md-offset-1">
-      <form>
-        <!-- insert city text box -->
-      	<input type = "text" class = "enterCityBox" ng-model="dest" placeholder= "Enter City" novalidate required></input>
-  
-        <!-- startDate Calendar Selector -->
-          <div>
-              <div class="row">
-                <div class="col-md-6">
-                  <p class="input-group">
-                    <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="startDate" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" placeholder = 'Pick Up'/>
-                    <span class="input-group-btn">
-                      <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
-                    </span>
-                  </p>
+        <form name = 'myForm'>
+          <!-- insert city text box -->
+        	<input type = "text" class = "enterCityBox" ng-model="dest" placeholder= "Enter City" novalidate required></input>
+    
+          <!-- startDate Calendar Selector -->
+            <div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <p class="input-group">
+                      <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="startDate" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" placeholder = 'Pick Up' novalidate required>
+                      <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                      </span>
+                    </p>
+                  </div>
+
+                  <!-- endDate Calendar Selector -->
+                  <div class="col-md-6">
+                    <p class="input-group">
+                      <input type="text" class="form-control" uib-datepicker-popup ng-model="endDate" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" placeholder = 'Drop Off' novalidate required>
+                      <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
+                      </span>
+                    </p>
+                  </div>
                 </div>
+            </div>
 
-                <!-- endDate Calendar Selector -->
-                <div class="col-md-6">
-                  <p class="input-group">
-                    <input type="text" class="form-control" uib-datepicker-popup ng-model="endDate" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" placeholder = 'Drop Off'/>
-                    <span class="input-group-btn">
-                      <button type="button" class="btn btn-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
-                    </span>
-                  </p>
-                </div>
-              </div>
-          </div>
+          <!-- pickUpTime -->
+          <uib-timepicker class = 'pickUpTimeBox' ng-model="pickUpTime" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian" novalidate required></uib-timepicker>
 
-        <!-- pickUpTime -->
-        <uib-timepicker class = 'pickUpTimeBox' ng-model="pickUpTime" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
-
-        <!-- dropOffTime -->
-        <uib-timepicker class = 'dropOffTimeBox' ng-model="dropOffTime" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
+          <!-- dropOffTime -->
+          <uib-timepicker class = 'dropOffTimeBox' ng-model="dropOffTime" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian" novalidate required></uib-timepicker>
+          
+          <!-- search button -->
+        </form>
         
-        <!-- search button -->
         <a href = '#/secondView'><button type="button" id = 'searchSubmit' class="btn btn-primary btn-lg active" ng-click ="catchDetails(dest, startDate, endDate, pickUpTime, dropOffTime)" class ="searchSubmit" ng-disabled="myForm.$invalid">Search</button></a>
-      </form>
 
       </div>
     </div>

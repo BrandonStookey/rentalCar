@@ -15,5 +15,4 @@ angular.module('project.secondView', ['ui.bootstrap','angular-loading-bar', 'ngA
 				$location.path('/homeView');
 			}
 		});
-
 }]);

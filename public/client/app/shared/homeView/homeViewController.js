@@ -3,7 +3,6 @@
 angular.module('project.homeView', ['ui.bootstrap','angular-loading-bar', 'ngAnimate'])
 
 .controller('homeViewController', ['$scope','projectFactory', function($scope, projectFactory){
-	console.log('I am homeViewController!');
 
 //============================Time Selector
 	$scope.pickUpTime;
