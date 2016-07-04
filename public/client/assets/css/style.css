@@ -118,6 +118,10 @@
 }
 
 /*loading bar spinner*/
+#loading-bar-spinner .spinner-icon{
+  width: 34px;
+  height: 34px;
+}
 
 #loading-bar-spinner {
   top: 50%;

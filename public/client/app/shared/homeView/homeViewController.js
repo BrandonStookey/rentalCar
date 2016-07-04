@@ -4,8 +4,8 @@ angular.module('project.homeView', ['ui.bootstrap','angular-loading-bar', 'ngAni
 
 .controller('homeViewController', ['$scope','projectFactory', function($scope, projectFactory){
 	console.log('I am homeViewController!');
+
 //============================Time Selector
-  // $scope.mytime = new Date();
 
   $scope.hstep = 1;
   $scope.mstep = 1;
@@ -20,26 +20,12 @@ angular.module('project.homeView', ['ui.bootstrap','angular-loading-bar', 'ngAni
     $scope.ismeridian = ! $scope.ismeridian;
   };
 
-  // $scope.update = function() {
-  //   var d = new Date();
-  //   d.setHours( 14 );
-  //   d.setMinutes( 0 );
-  //   $scope.mytime = d;
-  // };
-
-  // $scope.changed = function () {
-  //   $log.log('Time changed to: ' + $scope.mytime);
-  // };
-
-  // $scope.clear = function() {
-  //   $scope.mytime = null;
-  // };
-
 //============================Date Selector
-$scope.today = function() {
-    $scope.dt = new Date();
-  };
-  $scope.today();
+
+	$scope.today = function() {
+	    $scope.dt = new Date();
+	  };
+	  $scope.today();
 
   $scope.clear = function() {
     $scope.dt = null;
@@ -52,7 +38,7 @@ $scope.today = function() {
   };
 
   $scope.dateOptions = {
-    dateDisabled: disabled,
+    // dateDisabled: disabled,
     formatYear: 'yy',
     maxDate: new Date(2020, 5, 22),
     minDate: new Date(),
@@ -60,11 +46,11 @@ $scope.today = function() {
   };
 
   // Disable weekend selection
-  function disabled(data) {
-    var date = data.date,
-      mode = data.mode;
-    return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
-  }
+  // function disabled(data) {
+  //   var date = data.date,
+  //     mode = data.mode;
+  //   return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
+  // }
 
   $scope.toggleMin = function() {
     $scope.inlineOptions.minDate = $scope.inlineOptions.minDate ? null : new Date();
@@ -141,12 +127,6 @@ $scope.today = function() {
 		var dropOffTimeResult;
 		var endDateResult;	
 		var destination;
-
-		// projectFatctory.test().then(function(result){
-		// 	console.log('result');
-		// });
-		
-		// pickUpTimeHour = pickUpTimeHour < 10 ? '0'+ pickUpTimeHour : pickUpTimeHour;
 		
 		pickUpTimeMinutes = pickUpTimeMinutes < 10 ? '0'+ pickUpTimeMinutes : pickUpTimeMinutes;
 		
@@ -170,7 +150,6 @@ $scope.today = function() {
 		var dropOffTimeMinutes = dropOffTime.getMinutes();
 		var dropOffTimeHour = dropOffTime.getHours();
 
-		// dropOffTimeHour = dropOffTimeHour < 10 ? '0'+ dropOffTimeHour : dropOffTimeHour;
 		dropOffTimeMinutes = dropOffTimeMinutes < 10 ? '0'+ dropOffTimeMinutes : dropOffTimeMinutes;
 
 		dropOffTimeResult = dropOffTimeHour + ":" + dropOffTimeMinutes;
@@ -189,26 +168,6 @@ $scope.today = function() {
 
 		console.log('endDate: ', endDateResult);
 
-		// projectFactory.getCar($scope.destination, $scope.pickUpTimeResult, $scope.startDateResult, $scope.endDateResult, $scope.dropOffTimeResult).then(function(data){ console.log('data:', data)});
-
 		projectFactory.setCarSearchResult(destination, pickUpTimeResult, startDateResult, endDateResult, dropOffTimeResult);
 	}
 }]);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
