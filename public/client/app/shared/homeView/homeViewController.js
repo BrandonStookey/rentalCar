@@ -6,9 +6,10 @@ angular.module('project.homeView', ['ui.bootstrap','angular-loading-bar', 'ngAni
 	console.log('I am homeViewController!');
 
 //============================Time Selector
-
+	$scope.pickUpTime;
+	$scope.dropOffTime;
   $scope.hstep = 1;
-  $scope.mstep = 1;
+  $scope.mstep = 30;
 
   $scope.options = {
     hstep: [1, 2, 3],
@@ -19,6 +20,26 @@ angular.module('project.homeView', ['ui.bootstrap','angular-loading-bar', 'ngAni
   $scope.toggleMode = function() {
     $scope.ismeridian = ! $scope.ismeridian;
   };
+
+  $scope.init = function(){
+		 $scope.updatePickUpTime = function() {
+		    var d = new Date();
+		    d.setHours( 14 );
+		    d.setMinutes( 0 );
+		    $scope.pickUpTime = d;
+		  };
+
+		 $scope.updateDropOffTime = function() {
+		    var d = new Date();
+		    d.setHours( 14 );
+		    d.setMinutes( 0 );
+		    $scope.dropOffTime = d;
+		  };
+
+		 	$scope.updatePickUpTime();
+		 	$scope.updateDropOffTime();
+	}
+	$scope.init();
 
 //============================Date Selector
 
@@ -115,6 +136,7 @@ angular.module('project.homeView', ['ui.bootstrap','angular-loading-bar', 'ngAni
 
     return '';
   }	
+//==============catchDetails, catches users selections and then passes it to projectFactory, then when the view changes, a REST API request is sent with the user's selected information
 	
 	$scope.catchDetails = function(dest, startDate, endDate, pickUpTime, dropOffTime){
 
@@ -144,8 +166,6 @@ angular.module('project.homeView', ['ui.bootstrap','angular-loading-bar', 'ngAni
 
 		startDateResult = startDateMonth + "/" + startDateDay + "/" + startDate.getFullYear();
 
-		console.log('startDateResult: ', startDateResult);
-
 		//=====================================User Selects Drop Off Time
 		var dropOffTimeMinutes = dropOffTime.getMinutes();
 		var dropOffTimeHour = dropOffTime.getHours();
@@ -153,9 +173,7 @@ angular.module('project.homeView', ['ui.bootstrap','angular-loading-bar', 'ngAni
 		dropOffTimeMinutes = dropOffTimeMinutes < 10 ? '0'+ dropOffTimeMinutes : dropOffTimeMinutes;
 
 		dropOffTimeResult = dropOffTimeHour + ":" + dropOffTimeMinutes;
-		
-		console.log('dropOffTimeResult: ',	dropOffTimeResult);
-
+	
 		//=======================================User Selects Drop Off Date
 
 		var endDateMonth = endDate.getMonth() + 1 
@@ -165,8 +183,6 @@ angular.module('project.homeView', ['ui.bootstrap','angular-loading-bar', 'ngAni
 		endDateDay = endDateDay < 10 ? '0'+ endDateDay : endDateDay;
 
 		endDateResult = endDateMonth + "/" + endDateDay + "/" + endDate.getFullYear();
-
-		console.log('endDate: ', endDateResult);
 
 		projectFactory.setCarSearchResult(destination, pickUpTimeResult, startDateResult, endDateResult, dropOffTimeResult);
 	}

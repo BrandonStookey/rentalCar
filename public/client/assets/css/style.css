@@ -7,7 +7,6 @@
  /*Style for index.html*/
 
 .header{
-	/*border: 1px solid #000000;*/
 	background-color: #0075F4;
 	padding-top: 20px;
 	padding-bottom: 20px;
@@ -63,7 +62,7 @@
 	float: right;
 }
 
-/*Style for date picker*/
+/*Style for date picker on homeView*/
 
 .full button span {
   background-color: limegreen;

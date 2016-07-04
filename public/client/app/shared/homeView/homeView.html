@@ -2,9 +2,8 @@
   <div class = 'searchCar'>
     <div class = 'row'>
       <div class="col-md-10 col-md-offset-1">
-      
       <form>
-
+        <!-- insert city text box -->
       	<input type = "text" class = "enterCityBox" ng-model="dest" placeholder= "Enter City" novalidate required></input>
   
         <!-- startDate Calendar Selector -->
@@ -36,7 +35,8 @@
 
         <!-- dropOffTime -->
         <uib-timepicker class = 'dropOffTimeBox' ng-model="dropOffTime" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></uib-timepicker>
-    
+        
+        <!-- search button -->
         <a href = '#/secondView'><button type="button" id = 'searchSubmit' class="btn btn-primary btn-lg active" ng-click ="catchDetails(dest, startDate, endDate, pickUpTime, dropOffTime)" class ="searchSubmit" ng-disabled="myForm.$invalid">Search</button></a>
       </form>
 
