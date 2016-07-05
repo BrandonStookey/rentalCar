@@ -1,6 +1,7 @@
 Project Name: rentalCar
 
 ## Table of Contents
+
 	- Usage
 	- Requirements
 	- Installing Dependencies
@@ -8,9 +9,11 @@ Project Name: rentalCar
 	- Tech Stack
 
 ##Usage
+
 	- Fork and clone this repo
 
 ##Requirements
+
 	- Node 4.4.0
 	- Angular 1.5.6
   - Angular ui router 0.3.0
@@ -20,6 +23,7 @@ Project Name: rentalCar
   - xml2json
 
 ##Installing Dependencies
+
 	- From within the root directory:
 
 	- sudo npm install -g nodemon
@@ -34,9 +38,11 @@ Project Name: rentalCar
 		The server runs on port 8080 by default
 
 ##In production 
+
 	- node server/server.js 
 
 ##Tech stack
+
 	- Angularjs 1.5
 
 	- Angularjs is a single page application, which allows a single index.html to be loaded with all required scripts and style sheets. It then utilizes many views that can be rendered to the static index.html page. This saves time from fetching required scripts and style sheets each time a new view is loaded.
