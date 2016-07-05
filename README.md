@@ -8,7 +8,7 @@ Project Name: rentalCar
 	- Tech Stack
 
 ##Usage
-	- Fork and clone this repo.
+	- Fork and clone this repo
 
 ##Requirements
 	- Node 4.4.0
@@ -33,8 +33,8 @@ Project Name: rentalCar
 		uses nodemon
 		The server runs on port 8080 by default
 
-##In production: 
-		- node server/server.js 
+##In production 
+	- node server/server.js 
 
 ##Tech stack
 	- Angularjs 1.5
