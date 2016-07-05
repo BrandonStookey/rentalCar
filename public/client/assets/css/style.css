@@ -40,11 +40,9 @@
   border-radius: 25px;
 }
 
-.enterCityBox{
+#enterCityBox{
 	margin-top: 25px;
 	margin-bottom: 25px;
-	height: 40px;
-	width:770px;
 	border-radius: 5px;
 }
 
