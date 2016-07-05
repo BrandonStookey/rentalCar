@@ -78,6 +78,17 @@
 
 /*style for secondView*/
 
+.invalidSearch{
+	text-align: center;
+	color: red;
+	font-weight: bold;
+	font-size: 24px;
+}
+
+#searchAgain{
+
+}
+
 .carImage{
 	height:100px;
 	width:185px;

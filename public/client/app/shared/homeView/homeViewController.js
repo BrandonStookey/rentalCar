@@ -75,9 +75,9 @@ angular.module('project.homeView', ['ui.bootstrap','angular-loading-bar', 'ngAni
 	    $scope.endDate = new Date(year, month, day);
 	  };
 
-	  $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+	  $scope.formats = ['shortDate'];
 	  $scope.format = $scope.formats[0];
-	  $scope.altInputFormats = ['M!/d!/yyyy'];
+	  // $scope.altInputFormats = ['M!/d!/yyyy'];
 
 	  $scope.popup1 = {
 	    opened: false

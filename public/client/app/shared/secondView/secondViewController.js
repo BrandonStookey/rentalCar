@@ -4,13 +4,14 @@ angular.module('project.secondView', ['ui.bootstrap','angular-loading-bar', 'ngA
 
 .controller('secondViewController', ['$scope','projectFactory', '$location',function($scope, projectFactory, $location){
 	$scope.carSearchResult;
-
+	$scope.carSearchResultBoolean = true;
+	
 	projectFactory.getCar().then(function(data){ 
-			console.log('secondView data:', data);
 			$scope.carSearchResult = data;
-			console.log('$scope.carSearchResult: ', $scope.carSearchResult);
-			if(!$scope.carSearchResult){
-				$location.path('/homeView');
+
+			if(!data){
+				$scope.carSearchResultBoolean = false;
 			}
+
 		});
 }]);

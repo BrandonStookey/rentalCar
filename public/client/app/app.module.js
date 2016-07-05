@@ -28,8 +28,13 @@ angular.module('project.services', [])
 		    return json;
 	   		}
 		}).then(function(result) {
-			console.log('getCar result: ', result);
+			
+			if(result.data.Hotwire.StatusDesc === "validation error"){
+				return false;
+			}
+
       return result.data.Hotwire.Result.CarResult;
+    
     }, function(err) {
       console.error('Post GET error:', err);
     });

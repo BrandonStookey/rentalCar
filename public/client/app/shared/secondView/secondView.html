@@ -1,7 +1,13 @@
+<div class ='invalidSearch' ng-hide = carSearchResultBoolean>
+	<p>Invalid Search</p> 
+	<a href ='#/homeView'><button id = 'searchAgain' type="button" class="btn btn-primary"> Search Again </button></a>
+</div>
+
 <div class = 'container' ng-repeat = 'car in carSearchResult'> 
 	<div class = 'row'>
 		<div class = 'col-md-10'>
 			<div class = 'carSearchBoxResult'>
+
 
 				<img class = 'carImage' ng-src="../assets/img/{{ car.CarTypeCode }}.png">
 
