@@ -4,7 +4,8 @@ Project Name: rentalCar
 	- Usage
 	- Requirements
 	- Installing Dependencies
-	- Contributing
+	- In production
+	- Tech Stack
 
 ##Usage
 	- Fork and clone this repo.
@@ -32,7 +33,7 @@ Project Name: rentalCar
 		uses nodemon
 		The server runs on port 8080 by default
 
-	In production: 
+##In production: 
 		- node server/server.js 
 
 ##Tech stack
