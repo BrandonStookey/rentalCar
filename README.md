@@ -1,22 +1,22 @@
 Project Name: rentalCar
 
 ## Table of Contents
-	-Usage
-	-Requirements
-	-Installing Dependencies
-	-Contributing
+	- Usage
+	- Requirements
+	- Installing Dependencies
+	- Contributing
 
 ##Usage
-	-Fork and clone this repo.
+	- Fork and clone this repo.
 
 ##Requirements
 	- Node 4.4.0
 	- Angular 1.5.6
-  - Angular-ui-router 0.3.0
+  - Angular ui router 0.3.0
   - Bootstrap 3.3.6
-  - Angular-animate 1.5.7
-  - Angular-ui-bootstrap 1.3.3
-  - xml2json.js
+  - Angular animate 1.5.7
+  - Angular ui bootstrap 1.3.3
+  - xml2json
 
 ##Installing Dependencies
 	- From within the root directory:
