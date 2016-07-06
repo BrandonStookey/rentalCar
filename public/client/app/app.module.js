@@ -15,7 +15,7 @@ angular.module('project.services', [])
 			dropOffTimeResult = dropOffTime; 
 	}
 	
-	var getCar = function(){	
+	var getCar = function(destResult, startDateResult, endDateResult, pickUpTimeResult, dropOffTimeResult){	
 		return $http({
 			method: 'GET',
 			url: '/getCar/' + destResult + '/' + startDateResult + '/' + endDateResult + '/' + pickUpTimeResult + '/' + dropOffTimeResult,
@@ -32,7 +32,7 @@ angular.module('project.services', [])
 			if(result.data.Hotwire.StatusDesc === "validation error"){
 				return false;
 			}
-
+		
       return result.data.Hotwire.Result.CarResult;
     
     }, function(err) {
@@ -43,5 +43,10 @@ angular.module('project.services', [])
 	return{
 		getCar: getCar,
 		setCarSearchResult: setCarSearchResult,
+		destResult: destResult,
+		pickUpTimeResult: pickUpTimeResult,
+		startDateResult: startDateResult,
+		endDateResult: endDateResult,
+		dropOffTimeResult: dropOffTimeResult
 	}
 }]);
