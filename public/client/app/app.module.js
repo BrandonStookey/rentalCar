@@ -1,18 +1,18 @@
 angular.module('project.services', [])
 
 .factory('projectFactory', ['$http', function($http){
-	var destResult;
-	var pickUpTimeResult;
-	var startDateResult;
-	var endDateResult;
-	var dropOffTimeResult;
+	var destResult = [];
+	var pickUpTimeResult = [];
+	var startDateResult = [];
+	var endDateResult = [];
+	var dropOffTimeResult = [];
 
 	var setCarSearchResult = function(dest, pickUpTime, startDate, endDate, dropOffTime){
-			destResult = dest;
-			pickUpTimeResult = pickUpTime;
-			startDateResult = startDate;
-			endDateResult = endDate;
-			dropOffTimeResult = dropOffTime; 
+			destResult[0] = (dest);
+			pickUpTimeResult[0] = (pickUpTime);
+			startDateResult[0] = (startDate);
+			endDateResult[0] = (endDate);
+			dropOffTimeResult[0] = (dropOffTime); 
 	}
 	
 	var getCar = function(destResult, startDateResult, endDateResult, pickUpTimeResult, dropOffTimeResult){	
@@ -32,7 +32,8 @@ angular.module('project.services', [])
 			if(result.data.Hotwire.StatusDesc === "validation error"){
 				return false;
 			}
-		
+
+			searchResult = result.data.Hotwire.Result.CarResult
       return result.data.Hotwire.Result.CarResult;
     
     }, function(err) {
@@ -47,6 +48,6 @@ angular.module('project.services', [])
 		pickUpTimeResult: pickUpTimeResult,
 		startDateResult: startDateResult,
 		endDateResult: endDateResult,
-		dropOffTimeResult: dropOffTimeResult
+		dropOffTimeResult: dropOffTimeResult,
 	}
 }]);

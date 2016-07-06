@@ -1,4 +1,4 @@
-// 'use strict';
+'use strict';
 describe('Project projectFactory', function () {
   var $scope, auth, $rootScope, projectFactory, $httpBackend;
 
@@ -27,17 +27,4 @@ describe('Project projectFactory', function () {
     $httpBackend.flush();
     expect(postsData).toMatch('ECAR');
   });
-
-  it('should call all user posts when getAllUserPosts function is invoked', function () {
-    var mockPosts = [{_id: 1},{_id: 2},{_id: 3}];  
-    var postsData;
-    $httpBackend.expectGET('/user/' + 'bob@bobmail.com').respond(mockPosts);
-    projectFactory.getAllUserPosts('bob@bobmail.com')
-    .then(function(data){
-      postsData  = data;
-    });
-    $httpBackend.flush();
-    expect(postsData).to.eql(mockPosts);
-  });
-
 });

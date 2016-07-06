@@ -7,6 +7,7 @@
   - Installing Dependencies
   - In production
   - Tech Stack
+  - Test
 
 ##Usage
 
@@ -55,5 +56,7 @@
 
   - A cdn for an angular-loading-bar and angular-loading-spinner was included and then the dependency was injected on second view. The loading bar helps improve the user experience, so the user knows there search is running. 
 
+##Test
 
+  - Karma and Jasmine was used to test the $http request
 

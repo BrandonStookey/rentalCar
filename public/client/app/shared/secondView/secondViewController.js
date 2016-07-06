@@ -2,24 +2,12 @@
 
 angular.module('project.secondView', ['ui.bootstrap','angular-loading-bar', 'ngAnimate'])
 
-.controller('secondViewController', ['$scope','projectFactory', '$location',function($scope, projectFactory, $location){
-	$scope.carSearchResult;
+.controller('secondViewController', ['$scope','projectFactory', function($scope, projectFactory){
 	$scope.carSearchResultBoolean = true;
-	projectFactory.destResult;
-	projectFactory.pickUpTimeResult;
-	projectFactory.startDateResult;
-	projectFactory.endDateResult;
-	projectFactory.dropOffTimeResult;
-	$scope.carSearchResult = projectFactory.searchResult;
-
-	console.log('secondView: ', projectFactory.destResult);
-	console.log('secondView: ', projectFactory.pickUpTimeResult);
-	console.log('secondView: ', projectFactory.startDateResult);
-	console.log('secondView: ', projectFactory.endDateResult);
-	console.log('secondView: ', projectFactory.dropOffTimeResult);
+	$scope.carSearchResult;
 	
-	projectFactory.getCar(projectFactory.destResult, projectFactory.startDateResult, projectFactory.endDateResult, projectFactory.pickUpTimeResult, projectFactory.dropOffTimeResult ).then(function(data){ 
-			projectFactory.searchResult = data;
+	projectFactory.getCar(projectFactory.destResult[0], projectFactory.startDateResult[0], projectFactory.endDateResult[0], projectFactory.pickUpTimeResult[0], projectFactory.dropOffTimeResult[0] ).then(function(data){ 
+			$scope.carSearchResult = data;
 
 			if(!data){
 				$scope.carSearchResultBoolean = false;
