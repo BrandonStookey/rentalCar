@@ -1,28 +1,28 @@
 var routerApp = angular.module('project', [
     'project.services',
-    'project.homeView',
-    'project.secondView',
+    'project.searchView',
+    'project.searchResultView',
     'ui.router'
     ]);
 
 routerApp.config(function($stateProvider, $urlRouterProvider) {
     
-    $urlRouterProvider.otherwise('/homeView');
+    $urlRouterProvider.otherwise('/searchView');
     
     $stateProvider
         
         // HOME STATES AND NESTED VIEWS ========================================
-        .state('homeView', {
-            url: '/homeView',
-            templateUrl: 'app/shared/homeView/homeView.html',
-            controller: 'homeViewController'
+        .state('searchView', {
+            url: '/searchView',
+            templateUrl: 'app/shared/searchView/searchView.html',
+            controller: 'searchViewController'
         })
         
         // SECONDVIEW AND MULTIPLE NAMED VIEWS =================================
-        .state('secondView', {
-            url: '/secondView',
-            templateUrl: 'app/shared/secondView/secondView.html',
-            controller: 'secondViewController'     
+        .state('searchResultView', {
+            url: '/searchResultView',
+            templateUrl: 'app/shared/searchResultView/searchResultView.html',
+            controller: 'searchResultViewController'     
         });
         
 });

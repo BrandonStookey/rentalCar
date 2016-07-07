@@ -12,8 +12,9 @@ app.get('/getCar/:destResult/:MM/:DD/:YYYY/:EMM/:EDD/:EYYYY/:pickUpTimeResult/:d
 	var dropOffTimeResult = req.params.dropOffTimeResult;
 
 	request('https://api.hotwire.com/v1/search/car?apikey=qqvyj5fw2sbye5upjv7pu6c8&dest=' + destResult +'&startdate='+ startDateResult + '&enddate='+ endDateResult +'&pickuptime='+ pickUpTimeResult + '&dropofftime='+ dropOffTimeResult, function (error, response, body) {
-		console.log(body);
-		var result = body;
+    if(error){
+    	console.log(error);
+    }
     res.status(200).send(body) ;
   })
 });

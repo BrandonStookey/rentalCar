@@ -29,11 +29,10 @@ angular.module('project.services', [])
 	   		}
 		}).then(function(result) {
 			
-			if(result.data.Hotwire.StatusDesc === "validation error"){
+			if(result.data.Hotwire.StatusDesc === "validation error" || result.data.Hotwire.Result === undefined){
 				return false;
-			}
+			} 
 
-			searchResult = result.data.Hotwire.Result.CarResult
       return result.data.Hotwire.Result.CarResult;
     
     }, function(err) {

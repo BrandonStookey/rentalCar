@@ -1,8 +1,8 @@
 'use strict';
 
-angular.module('project.homeView', ['ui.bootstrap','angular-loading-bar', 'ngAnimate','ngAutocomplete'])
+angular.module('project.searchView', ['ui.bootstrap','angular-loading-bar', 'ngAnimate','ngAutocomplete'])
 
-.controller('homeViewController', ['$scope','projectFactory', function($scope, projectFactory){
+.controller('searchViewController', ['$scope','projectFactory', function($scope, projectFactory){
 
 //============================Time Selector
 	$scope.pickUpTime;
@@ -77,7 +77,6 @@ angular.module('project.homeView', ['ui.bootstrap','angular-loading-bar', 'ngAni
 
 	  $scope.formats = ['shortDate'];
 	  $scope.format = $scope.formats[0];
-	  // $scope.altInputFormats = ['M!/d!/yyyy'];
 
 	  $scope.popup1 = {
 	    opened: false
@@ -120,7 +119,7 @@ angular.module('project.homeView', ['ui.bootstrap','angular-loading-bar', 'ngAni
 	    return '';
 	  }	
 	  
-	  //=================toggleMin needs to be invoked twice, it keeps users from selecting a date before the current day 
+//=================toggleMin needs to be invoked twice, it keeps users from selecting a date before the current day 
   	$scope.toggleMin();
   	$scope.toggleMin();
 	 	$scope.updatePickUpTime();
@@ -140,12 +139,12 @@ angular.module('project.homeView', ['ui.bootstrap','angular-loading-bar', 'ngAni
 		var endDateResult;	
 		var destination;
 		
-		//======================================User Selects Pick Up Time
+//======================================User Selects Pick Up Time
 		pickUpTimeMinutes = pickUpTimeMinutes < 10 ? '0'+ pickUpTimeMinutes : pickUpTimeMinutes;
 		
 		pickUpTimeResult = pickUpTimeHour + ":" + pickUpTimeMinutes;
 
-		//=======================================User Selects Pick Up date
+//=======================================User Selects Pick Up date
 		var startDateMonth = startDate.getMonth() + 1;
 		var startDateDay = startDate.getDate(); 
 
@@ -155,7 +154,7 @@ angular.module('project.homeView', ['ui.bootstrap','angular-loading-bar', 'ngAni
 
 		startDateResult = startDateMonth + "/" + startDateDay + "/" + startDate.getFullYear();
 
-		//=====================================User Selects Drop Off Time
+//=====================================User Selects Drop Off Time
 		var dropOffTimeMinutes = dropOffTime.getMinutes();
 		var dropOffTimeHour = dropOffTime.getHours();
 
@@ -163,7 +162,7 @@ angular.module('project.homeView', ['ui.bootstrap','angular-loading-bar', 'ngAni
 
 		dropOffTimeResult = dropOffTimeHour + ":" + dropOffTimeMinutes;
 	
-		//=======================================User Selects Drop Off Date
+//=======================================User Selects Drop Off Date
 		var endDateMonth = endDate.getMonth() + 1 
 		var endDateDay = endDate.getDate()
 

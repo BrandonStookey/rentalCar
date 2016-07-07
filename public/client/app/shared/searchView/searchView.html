@@ -6,10 +6,9 @@
           <!-- insert city text box -->
           <div class = 'row'>
             <div class = "col-md-12">
-          <input id = "enterCityBox" ng-model = "dest" type="text" id="Autocomplete" class="form-control" ng-autocomplete="result1" details="details1" placeholder= "Enter a City" uib-tooltip="Enter a City" options="options1" novalidate required>
+          <input id = "enterCityBox" ng-model = "dest" type="text" id="Autocomplete" class="form-control" ng-autocomplete="result" details="details" placeholder= "Enter a City" uib-tooltip="Enter a City" options="options" novalidate required>
             </div>
           </div>  
-          <!-- <input type = "text" class = "enterCityBox" ng-model="dest" placeholder= "Enter City" uib-tooltip="Enter City" novalidate required></input> -->
     
           <!-- startDate Calendar Selector -->
             <div>
@@ -44,7 +43,7 @@
           <!-- search button -->
         </form>
         
-        <a href = '#/secondView'><button type="button" id = 'searchSubmit' class="btn btn-primary btn-lg active" ng-click ="catchDetails(dest, startDate, endDate, pickUpTime, dropOffTime)" class ="searchSubmit" ng-disabled="myForm.$invalid">Search</button></a>
+        <a href = '#/searchResultView'><button type="button" id = 'searchSubmit' class="btn btn-primary btn-lg active" ng-click ="catchDetails(dest, startDate, endDate, pickUpTime, dropOffTime)" class ="searchSubmit" ng-disabled="myForm.$invalid">Search</button></a>
 
       </div>
     </div>

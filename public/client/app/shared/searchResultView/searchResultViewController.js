@@ -1,8 +1,8 @@
 'use strict';
 
-angular.module('project.secondView', ['ui.bootstrap','angular-loading-bar', 'ngAnimate'])
+angular.module('project.searchResultView', ['ui.bootstrap','angular-loading-bar', 'ngAnimate'])
 
-.controller('secondViewController', ['$scope','projectFactory', function($scope, projectFactory){
+.controller('searchResultViewController', ['$scope','projectFactory', function($scope, projectFactory){
 	$scope.carSearchResultBoolean = true;
 	$scope.carSearchResult;
 	

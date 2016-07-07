@@ -8,6 +8,7 @@
   - In production
   - Tech Stack
   - Test
+  - Deployment
 
 ##Usage
 
@@ -50,13 +51,15 @@
 
   - Angular bootstrap and angular-animate was used to style the page
 
-  - An xml2json library located in libs1 was used to convert the Rest API request from xml, to json, it was then used with the $http request in app.module.js to transform the xml to json
+  - An xml2json library was used to convert the Rest API request from XML, to JSON, it was used with the $http request in app.module.js to transform the XML to JSON
 
-  - ngAutocmoplete was used with google maps API to allow for auto complete for cities, to improve user's experience
+  - ngAutocmoplete was used with google maps to allow for auto complete for cities, to improve users' experience
 
   - A cdn for an angular-loading-bar and angular-loading-spinner was included and then the dependency was injected on second view. The loading bar helps improve the user experience, so the user knows there search is running. 
 
 ##Test
 
-  - Karma and Jasmine was used to test the $http request
+  - Karma was used to test the $http request
 
+##Deployment
+  - When the web app is deployed to heroku, it will do a postinstall for bower. This will install all of the required Angular dependency, the .bowerrc file instructs power to install Angular and its dependency in a file called libs.  
