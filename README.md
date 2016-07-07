@@ -36,12 +36,12 @@
 		runs bower install for you
 
   - npm start 
-		uses nodemon
-		The server runs on port 8080 by default
+		uses nodemon,the server runs on port 8080 by default
 
 ##In production 
 
   - node server/server.js 
+  - When the web app is deployed to heroku, it will do a postinstall for bower. This will install all of the required Angular dependency, the .bowerrc file instructs power to install Angular and its dependency in a file called libs.
 
 ##Tech stack
 
@@ -60,6 +60,4 @@
 ##Test
 
   - Karma was used to test the $http request
-
-##Deployment
-  - When the web app is deployed to heroku, it will do a postinstall for bower. This will install all of the required Angular dependency, the .bowerrc file instructs power to install Angular and its dependency in a file called libs.  
+    
